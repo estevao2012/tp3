@@ -8,8 +8,6 @@ unsigned determina_pagina(unsigned page_size, unsigned addr){
 		tmp = tmp>>1;
 		s++;
 	}
-	page = addr >> s;
-	printf("%d\n", page_size );
-	printf("%d %d %x\n", page,s,addr );
+	page = addr >> s; 
 	return page;
 }
