@@ -11,7 +11,17 @@ int main(int argc , char **argv)
 	int tamanho_memoria;
 	unsigned addr;
     char rw;
-    int endereco ;
+    int endereco;
+    lista *l;
+    l = init_lista(); 
+    insere_no(l,-1);
+    // insere_no(l,2);
+    // insere_no(l,3);
+    mostra_lista(l);
+    printf("removendo no\n");
+    remove_no(l,1);
+    printf("no removido\n");
+    mostra_lista(l);
 
 	tamanho_pagina = atoi(argv[3]);
 	tamanho_memoria = atoi(argv[4]);
@@ -20,7 +30,6 @@ int main(int argc , char **argv)
 	f_log = fopen(argv[2], "r");
 
 	while (fscanf(f_log,"%x %c",&addr,&rw) != EOF) {
-		printf("%x\n", determina_pagina(tamanho_pagina , addr) );
+		printf("%x %x\n", tamanho_pagina, determina_pagina(tamanho_pagina , addr) );
 	}
-
 }	

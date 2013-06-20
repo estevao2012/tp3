@@ -3,7 +3,7 @@
 
 struct no{
 	struct no* proximo;
-	page *p;
+	page *page;
 	int indice;
 };
 
