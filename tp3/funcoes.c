@@ -1,4 +1,4 @@
-unsigned determina_pagina(unsigned page_size, unsigned addr){
+long determina_pagina(unsigned page_size, unsigned addr){
 	unsigned s, tmp ,page;
 	tmp = page_size;
 	s = 0;
@@ -9,3 +9,7 @@ unsigned determina_pagina(unsigned page_size, unsigned addr){
 	page = addr >> s; 
 	return page;
 }
+
+void fifo();
+
+void lru();

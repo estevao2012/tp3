@@ -5,31 +5,32 @@
 #include "lista.h"
 #include "funcoes.c"
 
+
 int main(int argc , char **argv)
 {
-	int tamanho_pagina;
-	int tamanho_memoria;
+    //Variaveis
+    int TEMPO = 0;
+	int tamanho_pagina,tamanho_memoria,qnt_paginas,endereco;
 	unsigned addr;
     char rw;
-    int endereco;
-    lista *l;
-    l = init_lista(); 
-    insere_no(l,-1);
-    // insere_no(l,2);
-    // insere_no(l,3);
-    mostra_lista(l);
-    printf("removendo no\n");
-    remove_no(l,1);
-    printf("no removido\n");
-    mostra_lista(l);
+    page* tmp_page;
+    lista *l = init_lista();
+    FILE *f_log = fopen(argv[2], "r"); //Abre Pagina
 
-	tamanho_pagina = atoi(argv[3]);
-	tamanho_memoria = atoi(argv[4]);
-
-	FILE *f_log;
-	f_log = fopen(argv[2], "r");
-
+    //Define Memoria Pagina e Qnt Paginas
+    tamanho_pagina = atoi(argv[3]);
+    tamanho_memoria = atoi(argv[4]);
+    qnt_paginas = tamanho_memoria / tamanho_pagina;
+    printf("%d\n", qnt_paginas );
+    //Le do arquivo
 	while (fscanf(f_log,"%x %c",&addr,&rw) != EOF) {
-		printf("%x %x\n", tamanho_pagina, determina_pagina(tamanho_pagina , addr) );
+        TEMPO++;
+        tmp_page = init_pag();
+		setEndereco(tmp_page,determina_pagina(tamanho_pagina,addr));
+        setRw(tmp_page,&rw);
+        setAcesso(tmp_page,TEMPO);
+        insere_no(l,tmp_page);
 	}
+
+    mostra_lista(l);
 }	
