@@ -1,4 +1,4 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int *tabela;
+int **tabela_de_pagina;

@@ -20,8 +20,7 @@ void insere_no(lista* l, page* val){
 	l->tamanho++;
 	
 }
-void remove_no(lista *l , int endereco){
-
+void remove_no(lista *l , long endereco){
 	node *tmp,*aux;
 	tmp = l->inicio;
 	while(tmp->proximo != NULL){
@@ -35,7 +34,26 @@ void remove_no(lista *l , int endereco){
 		}
 		tmp = tmp->proximo;
 	}
+}
 
+void remove_ultimo(lista *l){
+	node *tmp = l->inicio;
+	while(tmp->proximo->proximo != NULL)
+		tmp = tmp->proximo;
+	tmp->proximo = NULL;
+}
+int busca_pagina(lista *l , page *p){
+
+	node *tmp;
+	tmp = l->inicio->proximo;
+
+	// if(l->tamanho > 0){
+	while(tmp->proximo != NULL){
+		if( p->endereco == tmp->page->endereco) return 1;
+		tmp = tmp->proximo;
+	}
+	// }
+	return 0;
 }
 
 lista* init_lista(){

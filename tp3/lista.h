@@ -17,7 +17,7 @@ typedef struct{
 node* init_no();
 void mostra_lista(lista *l);
 void insere_no(lista* l, page* val);
-void remove_no(lista *l , int indice_page);
+void remove_no(lista *l , long endereco_page);
 lista* init_lista();
 
 #include "lista.c"
