@@ -1,6 +1,6 @@
-void atualiza_acesso(lista *l, page* p){
-	remove_no(l,p->endereco);
-	insere_no(l,p);
+void atualiza_acesso(lista *memoria, page* p){
+	remove_no(memoria,p->endereco);
+	insere_no(memoria,p);
 }
 
 long determina_pagina(unsigned page_size, unsigned addr){
@@ -15,14 +15,14 @@ long determina_pagina(unsigned page_size, unsigned addr){
 	return page;
 }
 
-int fifo(lista *l,page *p,int qnt_paginas){
+int fifo(lista *memoria,page *p,int qnt_paginas){
 	int page_fault = 0;
-	if(busca_pagina(l,p) == 0){
-		if(qnt_paginas <= l->tamanho){
-			remove_ultimo(l);
-			insere_no(l,p);
+	if(busca_pagina(memoria,p) == 0){
+		if(qnt_paginas <= memoria->tamanho){
+			remove_ultimo(memoria);
+			insere_no(memoria,p);
 		}else{
-			insere_no(l,p);
+			insere_no(memoria,p);
 		}
 		page_fault++;
 	}
@@ -30,35 +30,35 @@ int fifo(lista *l,page *p,int qnt_paginas){
 		
 }
 
-int lru(lista *l , page *p , int qnt_paginas){
+int lru(lista *memoria , page *p , int qnt_paginas){
 	
-	if(busca_pagina(l,p) == 0) return fifo(l,p,qnt_paginas);
-	atualiza_acesso(l,p);
+	if(busca_pagina(memoria,p) == 0) return fifo(memoria,p,qnt_paginas);
+	atualiza_acesso(memoria,p);
 	return 0;
 }
 
-int aleatorio(lista *l , page *p , int qnt_paginas){
+int aleatorio(lista *memoria , page *p , int qnt_paginas){
 	int page_fault=0;
 	int indice;
-	node *tmp;
-	if(busca_pagina(l,p) == 0){
+	
+	if(busca_pagina(memoria,p) == 0){
 
-		if(qnt_paginas <= l->tamanho){
+		if(qnt_paginas <= memoria->tamanho){
+			node *tmp = memoria->inicio;
 			indice = (random() % qnt_paginas);
-			tmp = l->inicio;
 			do{
 				tmp = tmp->proximo;
 				indice--;
 			}while(indice >= 0);
-			remove_no(l,getEndereco(tmp->page));
-			insere_no(l,p);
-		}else insere_no(l,p);
+			remove_no(memoria,getEndereco(tmp->page));
+			insere_no(memoria,p);
+		}else insere_no(memoria,p);
 		
 
 		page_fault++;
 
 	}else{
-		atualiza_acesso(l,p);
+		atualiza_acesso(memoria,p);
 	}
 	return page_fault;
 
