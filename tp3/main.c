@@ -1,6 +1,6 @@
-
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include <string.h>
 #include "globais.h"
 #include "page.h"
@@ -27,15 +27,21 @@ int main(int argc , char **argv)
     // qnt_paginas = tamanho_memoria / tamanho_pagina;
     qnt_paginas = 4;
     M_inicializa(qnt_paginas);
-    
+    T_inicializa(tamanho_pagina);
+
     printf("Executando o simulador...\n");
 
 	while (fscanf(f_log,"%x %c",&addr,&rw) != EOF) {
         TEMPO++;
-
         tmp_page = setAll(TEMPO , &rw , determina_pagina(tamanho_pagina,addr) , TEMPO);
-
-        page_faults = page_faults+aleatorio(tmp_page,qnt_paginas);
+        if(!strcmp (argv[1] , "fifo"))
+            page_faults = page_faults+fifo(tmp_page,qnt_paginas);
+        
+        else if(!strcmp (argv[1] , "lru"))
+            page_faults = page_faults+lru(tmp_page,qnt_paginas);
+        
+        else if(!strcmp (argv[1] , "random"))
+            page_faults = page_faults+aleatorio(tmp_page,qnt_paginas);
 
         if(mod_debug){ printf("inserir atual : %ld qnt fault:%d\n" , getEndereco(tmp_page),page_faults);M_mostra(qnt_paginas); }
 	}
