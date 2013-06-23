@@ -1,8 +1,3 @@
-void atualiza_acesso(lista *memoria, page* p){
-	remove_no(memoria,p->endereco);
-	insere_no(memoria,p);
-}
-
 long determina_pagina(unsigned page_size, unsigned addr){
 	unsigned s, tmp ,page;
 	tmp = page_size;
@@ -15,51 +10,57 @@ long determina_pagina(unsigned page_size, unsigned addr){
 	return page;
 }
 
-int fifo(lista *memoria,page *p,int qnt_paginas){
-	int page_fault = 0;
-	if(busca_pagina(memoria,p) == 0){
-		if(qnt_paginas <= memoria->tamanho){
-			remove_ultimo(memoria);
-			insere_no(memoria,p);
-		}else{
-			insere_no(memoria,p);
-		}
-		page_fault++;
-	}
-	return page_fault;
-		
-}
+int fifo(page *p,int qnt_paginas){
+	int i = M_busca(p,qnt_paginas);
 
-int lru(lista *memoria , page *p , int qnt_paginas){
-	
-	if(busca_pagina(memoria,p) == 0) return fifo(memoria,p,qnt_paginas);
-	atualiza_acesso(memoria,p);
+	// //Metodo de reposicao
+	if(i == -1){
+		i = 0;
+		while(MEMORIA[i] != NULL && i < qnt_paginas)i++;
+		if(i == qnt_paginas)
+			i = M_busca_antigo(qnt_paginas);
+		
+		if(!strcmp(MEMORIA[i]->rw ,"W"))paginas_sujas++;
+		MEMORIA[i] = p;
+		return 1;
+	}
+
 	return 0;
 }
 
-int aleatorio(lista *memoria , page *p , int qnt_paginas){
-	int page_fault=0;
-	int indice;
+int lru(page *p , int qnt_paginas){
 	
-	if(busca_pagina(memoria,p) == 0){
+	int i = M_busca(p,qnt_paginas);
 
-		if(qnt_paginas <= memoria->tamanho){
-			node *tmp = memoria->inicio;
-			indice = (random() % qnt_paginas);
-			do{
-				tmp = tmp->proximo;
-				indice--;
-			}while(indice >= 0);
-			remove_no(memoria,getEndereco(tmp->page));
-			insere_no(memoria,p);
-		}else insere_no(memoria,p);
+	// //Metodo de reposicao
+	if(i == -1){
+		i = 0;
+		while(MEMORIA[i] != NULL && i < qnt_paginas)i++;
+		if(i == qnt_paginas)
+			i = M_busca_antigo(qnt_paginas);
 		
+		if(!strcmp(MEMORIA[i]->rw ,"W"))paginas_sujas++;
+		MEMORIA[i] = p;
+		return 1;
+	}else setAcesso(MEMORIA[i],getAcesso(p));
+	
+	return 0;
+}
 
-		page_fault++;
-
-	}else{
-		atualiza_acesso(memoria,p);
+int aleatorio(page *p , int qnt_paginas){
+	int i = M_busca(p,qnt_paginas);
+	
+	if(i == -1){
+		i = 0;
+		while(MEMORIA[i] != NULL && i < qnt_paginas)i++;
+		if(i == qnt_paginas){
+			i = random() % qnt_paginas;
+			if(!strcmp(MEMORIA[i]->rw ,"W"))paginas_sujas++;
+		}
+		MEMORIA[i] = p;
+		return 1;
 	}
-	return page_fault;
+
+	return 0;
 
 }
