@@ -1,0 +1,384 @@
+
+fifo compilador.log 128 2 84419 8446
+
+fifo compilador.log 128 4 98067 9935
+
+fifo compilador.log 128 8 132386 13997
+
+fifo compilador.log 128 16 189322 21806
+
+fifo compilador.log 128 32 263907 33417
+
+fifo compilador.log 128 64 370856 55109
+
+fifo compilador.log 256 2 59035 5912
+
+fifo compilador.log 256 4 70315 7018
+
+fifo compilador.log 256 8 92279 9596
+
+fifo compilador.log 256 16 123445 13291
+
+fifo compilador.log 256 32 170963 19598
+
+fifo compilador.log 256 64 227915 30603
+
+fifo compilador.log 512 2 40341 4264
+
+fifo compilador.log 512 4 48526 4911
+
+fifo compilador.log 512 8 65270 6797
+
+fifo compilador.log 512 16 83950 8905
+
+fifo compilador.log 512 32 109458 11706
+
+fifo compilador.log 512 64 147332 17686
+
+fifo compilador.log 1024 2 21639 2448
+
+fifo compilador.log 1024 4 31698 3425
+
+fifo compilador.log 1024 8 44465 4649
+
+fifo compilador.log 1024 16 57600 6144
+
+fifo compilador.log 1024 32 72140 7566
+
+fifo compilador.log 1024 64 93778 10386
+
+fifo compilador.log 2048 2 10190 1388
+
+fifo compilador.log 2048 4 15609 1776
+
+fifo compilador.log 2048 8 26928 2976
+
+fifo compilador.log 2048 16 38430 4126
+
+fifo compilador.log 2048 32 47785 4876
+
+fifo compilador.log 2048 64 60369 6451
+
+fifo compilador.log 4096 2 4849 779
+
+fifo compilador.log 4096 4 6673 959
+
+fifo compilador.log 4096 8 11951 1464
+
+fifo compilador.log 4096 16 21527 2465
+
+fifo compilador.log 4096 32 30752 3142
+
+fifo compilador.log 4096 64 38496 3927
+
+fifo compilador.log 8192 2 3621 0
+
+fifo compilador.log 8192 4 3432 517
+
+fifo compilador.log 8192 8 4825 757
+
+fifo compilador.log 8192 16 8198 1070
+
+fifo compilador.log 8192 32 14172 1579
+
+fifo compilador.log 8192 64 22804 2400
+
+fifo compilador.log 16384 2 3621 0
+
+fifo compilador.log 16384 4 2852 0
+
+fifo compilador.log 16384 8 2494 389
+
+fifo compilador.log 16384 16 3201 555
+
+fifo compilador.log 16384 32 5223 718
+
+fifo compilador.log 16384 64 9859 1100
+
+fifo simulador.log 128 2 59155 10541
+
+fifo simulador.log 128 4 85283 14301
+
+fifo simulador.log 128 8 131827 22970
+
+fifo simulador.log 128 16 208367 40255
+
+fifo simulador.log 128 32 274439 59832
+
+fifo simulador.log 128 64 427573 108697
+
+fifo simulador.log 256 2 34943 7236
+
+fifo simulador.log 256 4 48301 8831
+
+fifo simulador.log 256 8 78338 13446
+
+fifo simulador.log 256 16 119307 21270
+
+fifo simulador.log 256 32 174434 35136
+
+fifo simulador.log 256 64 248262 54149
+
+fifo simulador.log 512 2 20163 4955
+
+fifo simulador.log 512 4 27778 5936
+
+fifo simulador.log 512 8 42421 8218
+
+fifo simulador.log 512 16 70724 12439
+
+fifo simulador.log 512 32 101483 18368
+
+fifo simulador.log 512 64 152352 29779
+
+fifo simulador.log 1024 2 11449 3373
+
+fifo simulador.log 1024 4 15440 3886
+
+fifo simulador.log 1024 8 22816 5239
+
+fifo simulador.log 1024 16 37606 7570
+
+fifo simulador.log 1024 32 60922 10736
+
+fifo simulador.log 1024 64 81506 13968
+
+fifo simulador.log 2048 2 7663 2539
+
+fifo simulador.log 2048 4 8089 2444
+
+fifo simulador.log 2048 8 11884 3276
+
+fifo simulador.log 2048 16 18800 4532
+
+fifo simulador.log 2048 32 31700 6453
+
+fifo simulador.log 2048 64 46770 7517
+
+fifo simulador.log 4096 2 6168 1972
+
+fifo simulador.log 4096 4 5492 1832
+
+fifo simulador.log 4096 8 6293 2095
+
+fifo simulador.log 4096 16 9188 2797
+
+fifo simulador.log 4096 32 14066 3579
+
+fifo simulador.log 4096 64 20809 4152
+
+fifo simulador.log 8192 2 5333 740
+
+fifo simulador.log 8192 4 4314 1314
+
+fifo simulador.log 8192 8 4528 1571
+
+fifo simulador.log 8192 16 5108 1792
+
+fifo simulador.log 8192 32 6783 2158
+
+fifo simulador.log 8192 64 8367 2267
+
+fifo simulador.log 16384 2 5144 0
+
+fifo simulador.log 16384 4 3890 0
+
+fifo simulador.log 16384 8 3669 952
+
+fifo simulador.log 16384 16 3751 1319
+
+fifo simulador.log 16384 32 3837 1370
+
+fifo simulador.log 16384 64 3934 1331
+
+fifo compressor.log 128 2 1928 314
+
+fifo compressor.log 128 4 2497 335
+
+fifo compressor.log 128 8 3235 387
+
+fifo compressor.log 128 16 11214 948
+
+fifo compressor.log 128 32 113347 8827
+
+fifo compressor.log 128 64 216584 31340
+
+fifo compressor.log 256 2 1249 242
+
+fifo compressor.log 256 4 1467 233
+
+fifo compressor.log 256 8 1804 260
+
+fifo compressor.log 256 16 2862 359
+
+fifo compressor.log 256 32 10640 885
+
+fifo compressor.log 256 64 104991 5572
+
+fifo compressor.log 512 2 772 123
+
+fifo compressor.log 512 4 891 163
+
+fifo compressor.log 512 8 1030 186
+
+fifo compressor.log 512 16 1495 230
+
+fifo compressor.log 512 32 2234 277
+
+fifo compressor.log 512 64 10332 867
+
+fifo compressor.log 1024 2 419 0
+
+fifo compressor.log 1024 4 511 56
+
+fifo compressor.log 1024 8 570 98
+
+fifo compressor.log 1024 16 850 164
+
+fifo compressor.log 1024 32 1119 175
+
+fifo compressor.log 1024 64 1956 254
+
+fifo compressor.log 2048 2 419 0
+
+fifo compressor.log 2048 4 317 0
+
+fifo compressor.log 2048 8 255 0
+
+fifo compressor.log 2048 16 430 67
+
+fifo compressor.log 2048 32 640 134
+
+fifo compressor.log 2048 64 890 149
+
+fifo compressor.log 4096 2 419 0
+
+fifo compressor.log 4096 4 317 0
+
+fifo compressor.log 4096 8 255 0
+
+fifo compressor.log 4096 16 209 0
+
+fifo compressor.log 4096 32 308 44
+
+fifo compressor.log 4096 64 444 97
+
+fifo compressor.log 8192 2 419 0
+
+fifo compressor.log 8192 4 317 0
+
+fifo compressor.log 8192 8 255 0
+
+fifo compressor.log 8192 16 209 0
+
+fifo compressor.log 8192 32 172 0
+
+fifo compressor.log 8192 64 155 5
+
+fifo compressor.log 16384 2 419 0
+
+fifo compressor.log 16384 4 317 0
+
+fifo compressor.log 16384 8 255 0
+
+fifo compressor.log 16384 16 209 0
+
+fifo compressor.log 16384 32 172 0
+
+fifo compressor.log 16384 64 137 0
+
+fifo matriz.log 128 2 36893 6388
+
+fifo matriz.log 128 4 81638 14319
+
+fifo matriz.log 128 8 211346 37940
+
+fifo matriz.log 128 16 324507 44859
+
+fifo matriz.log 128 32 403797 46468
+
+fifo matriz.log 128 64 458585 51746
+
+fifo matriz.log 256 2 20441 3604
+
+fifo matriz.log 256 4 30422 5492
+
+fifo matriz.log 256 8 77190 13617
+
+fifo matriz.log 256 16 205727 37160
+
+fifo matriz.log 256 32 314398 44647
+
+fifo matriz.log 256 64 350270 45133
+
+fifo matriz.log 512 2 10669 2044
+
+fifo matriz.log 512 4 17523 3204
+
+fifo matriz.log 512 8 27104 4907
+
+fifo matriz.log 512 16 70151 12436
+
+fifo matriz.log 512 32 188541 34708
+
+fifo matriz.log 512 64 271380 43464
+
+fifo matriz.log 1024 2 6097 1281
+
+fifo matriz.log 1024 4 8551 1693
+
+fifo matriz.log 1024 8 15410 2818
+
+fifo matriz.log 1024 16 22815 4170
+
+fifo matriz.log 1024 32 59061 10287
+
+fifo matriz.log 1024 64 137751 26232
+
+fifo matriz.log 2048 2 4027 882
+
+fifo matriz.log 2048 4 4850 1025
+
+fifo matriz.log 2048 8 6672 1311
+
+fifo matriz.log 2048 16 12021 2255
+
+fifo matriz.log 2048 32 19309 3458
+
+fifo matriz.log 2048 64 40262 6739
+
+fifo matriz.log 4096 2 3367 436
+
+fifo matriz.log 4096 4 3264 664
+
+fifo matriz.log 4096 8 3840 849
+
+fifo matriz.log 4096 16 4910 1021
+
+fifo matriz.log 4096 32 9506 1780
+
+fifo matriz.log 4096 64 14861 2581
+
+fifo matriz.log 8192 2 2994 0
+
+fifo matriz.log 8192 4 2798 205
+
+fifo matriz.log 8192 8 2778 538
+
+fifo matriz.log 8192 16 3027 692
+
+fifo matriz.log 8192 32 4013 847
+
+fifo matriz.log 8192 64 6848 1265
+
+fifo matriz.log 16384 2 2994 0
+
+fifo matriz.log 16384 4 2543 0
+
+fifo matriz.log 16384 8 2326 53
+
+fifo matriz.log 16384 16 2294 431
+
+fifo matriz.log 16384 32 2461 552
+
+fifo matriz.log 16384 64 3175 659

@@ -9,9 +9,9 @@ int Log2(int n){
 int expo(int base, int expo){
 	int i;
 	int tmp = base;
-	for(i=1;i<expo;i++) {
+	for(i=1;i<expo;i++) 
 		tmp = tmp*base;
-	}
+	
 	return tmp;
 }
 
@@ -23,7 +23,6 @@ void T_inicializa(int tam_pagina){
 	int i;
 	long int tamanho_tabela;
 	tamanho_tabela = expo(2 , num_bits_tabela);
-	printf("%ld\n",  tamanho_tabela);
 
 	TABELA_PAGINA = (int*)malloc(sizeof(int) * tamanho_tabela);
 

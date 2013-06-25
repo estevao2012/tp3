@@ -17,15 +17,16 @@ int main(int argc , char **argv)
     char rw;
     page* tmp_page;
     FILE *f_log = fopen(argv[2], "r"); //Abre Pagina
-    int mod_debug = 1;
+    FILE *saida = fopen(argv[1], "a"); //Abre Pagina
+    int mod_debug = 0;
 
     //Define Memoria Pagina e Qnt Paginas
     tamanho_pagina = atoi(argv[3]);
     tamanho_memoria = atoi(argv[4]);
     if(argv[5] != NULL) mod_debug = atoi(argv[5]);
 
-    // qnt_paginas = tamanho_memoria / tamanho_pagina;
-    qnt_paginas = 4;
+    qnt_paginas = tamanho_memoria / tamanho_pagina; 
+
     M_inicializa(qnt_paginas);
     T_inicializa(tamanho_pagina);
 
@@ -54,5 +55,6 @@ int main(int argc , char **argv)
     printf("Tecnica de reposicao: %s\n", argv[1] );
     printf("Paginas lidas:%d\n", page_faults );
     printf("Paginas escritas:%d\n", paginas_sujas );
+    if(mod_debug)fprintf(saida, "\n%s %s %d %d %d %d\n",argv[1],argv[2], tamanho_memoria, tamanho_pagina, page_faults ,paginas_sujas);
     
 }	
