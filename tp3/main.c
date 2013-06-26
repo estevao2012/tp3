@@ -23,7 +23,7 @@ int main(int argc , char **argv)
     //Define Memoria Pagina e Qnt Paginas
     tamanho_pagina = atoi(argv[3]);
     tamanho_memoria = atoi(argv[4]);
-    if(argv[5] != NULL) mod_debug = atoi(argv[5]);
+    // if(argv[5] != NULL) mod_debug = atoi(argv[5]);
 
     qnt_paginas = tamanho_memoria / tamanho_pagina; 
 
@@ -49,12 +49,12 @@ int main(int argc , char **argv)
     
     
     //Status FInal
-    printf("Arquivo de entrada: %s\n", argv[2] );
-    printf("Tamanho da memoria: %d\n", tamanho_memoria);
-    printf("Tamanho das paginas: %d\n", tamanho_pagina);
-    printf("Tecnica de reposicao: %s\n", argv[1] );
-    printf("Paginas lidas:%d\n", page_faults );
-    printf("Paginas escritas:%d\n", paginas_sujas );
-    if(mod_debug)fprintf(saida, "\n%s %s %d %d %d %d\n",argv[1],argv[2], tamanho_memoria, tamanho_pagina, page_faults ,paginas_sujas);
+    // printf("Arquivo de entrada: %s\n", argv[2] );
+    // printf("Tamanho da memoria: %d\n", tamanho_memoria);
+    // printf("Tamanho das paginas: %d\n", tamanho_pagina);
+    // printf("Tecnica de reposicao: %s\n", argv[1] );
+    // printf("Paginas lidas:%d\n", page_faults );
+    // printf("Paginas escritas:%d\n", paginas_sujas );
+    fprintf(saida, "%s %s %d %d %d %d\n",argv[1],argv[2], tamanho_memoria, tamanho_pagina, page_faults ,paginas_sujas);
     
 }	

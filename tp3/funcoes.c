@@ -29,6 +29,8 @@ int fifo(page *p,int qnt_paginas){
 		TABELA_PAGINA[getEndereco(p)] = i;
 		MEMORIA[i] = p;
 		return 1;
+	}else{
+		setRw(MEMORIA[i] , p->rw);
 	}
 
 	return 0;
@@ -52,7 +54,10 @@ int lru(page *p , int qnt_paginas){
 		TABELA_PAGINA[getEndereco(p)] = i;
 		MEMORIA[i] = p;
 		return 1;
-	}else setAcesso(MEMORIA[i],getAcesso(p));
+	}else{
+		setAcesso(MEMORIA[i],getAcesso(p));
+		setRw(MEMORIA[i] , p->rw);
+	} 
 	
 	return 0;
 }
@@ -76,6 +81,9 @@ int aleatorio(page *p , int qnt_paginas){
 		TABELA_PAGINA[getEndereco(p)] = i;
 		MEMORIA[i] = p;
 		return 1;
+	}else{
+
+		setRw(MEMORIA[i] , p->rw);
 	}
 
 	return 0;
